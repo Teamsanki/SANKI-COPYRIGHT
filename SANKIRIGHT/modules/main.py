@@ -104,18 +104,30 @@ async def activevc(_, message: Message):
 
     await message.reply(reply_text, quote=True)
 
-FORBIDDEN_KEYWORDS = ["porn", "xxx", "sex", "NCERT", "XII", "page", "Ans", "meiotic", "divisions", "System.in", "Scanner", "void", "nextInt", "madhrchod", "randi", " lund", "land", "lawda", " betichod", "chutiya", "gand", "lula"]
+FORBIDDEN_KEYWORDS = [
+    "porn", "xxx", "sex", "NCERT", "XII", "page", "Ans", "meiotic", 
+    "divisions", "System.in", "Scanner", "void", "nextInt", 
+    "madhrchod", "randi", "lund", "land", "lawda", "betichod", 
+    "chutiya", "gand", "lula"
+]
 
 @app.on_message()
 async def handle_message(client, message):
-    if any(keyword in message.text for keyword in FORBIDDEN_KEYWORDS):
-        logging.info(f"Deleting message with ID {message.id}")
-        await message.delete()
-        await message.reply_text(f"@{message.from_user.username} ᴡʜʏ ʏᴏᴜ ᴜsɪɴɢ ʟɪᴋᴇ ᴛʜɪs ᴡᴏʀᴅ ᴅᴏɴ'ᴛ ᴅᴏ ɴᴇxᴛ ᴛɪᴍᴇ ᴏᴋʏ! ɪғ ʏᴏᴜ ᴅᴏ ᴀɢᴀɪɴ ᴀᴅᴍɪɴs ɢɪᴠᴇs ʏᴏᴜ ʙᴀɴ. ")
-    elif any(keyword in message.caption for keyword in FORBIDDEN_KEYWORDS):
-        logging.info(f"Deleting message with ID {message.id}")
-        await message.delete()
-        await message.reply_text(f"@{message.from_user.username} ᴡʜʏ ʏᴏᴜ ᴜsɪɴɢ ʟɪᴋᴇ ᴛʜɪs ᴡᴏʀᴅ ᴅᴏɴ'ᴛ ᴅᴏ ɴᴇxᴛ ᴛɪᴍᴇ ᴏᴋʏ! ɪғ ʏᴏᴜ ᴅᴏ ᴀɢᴀɪɴ ᴀᴅᴍɪɴs ɢɪᴠᴇs ʏᴏᴜ ʙᴀɴ. ")
+    try:
+        # Check if the message has text
+        if hasattr(message, 'text') and any(keyword in message.text for keyword in FORBIDDEN_KEYWORDS):
+            logging.info(f"Deleting message with ID {message.id}")
+            await message.delete()
+            await message.reply_text(f"@{message.from_user.username} ᴡʜʏ ʏᴏᴜ ᴜsɪɴɢ ʟɪᴋᴇ ᴛʜɪs ᴡᴏʀᴅ ᴅᴏɴ'ᴛ ᴅᴏ ɴᴇxᴛ ᴛɪᴍᴇ ᴏᴋʏ! ɪғ ʏᴏᴜ ᴅᴏ ᴀɢᴀɪɴ ᴀᴅᴍɪɴs ɢɪᴠᴇs ʏᴏᴜ ʙᴀɴ.")
+        
+        # Check if the message has a caption
+        elif hasattr(message, 'caption') and any(keyword in message.caption for keyword in FORBIDDEN_KEYWORDS):
+            logging.info(f"Deleting message with ID {message.id}")
+            await message.delete()
+            await message.reply_text(f"@{message.from_user.username} ᴡʜʏ ʏᴏᴜ ᴜsɪɴɢ ʟɪᴋᴇ ᴛʜɪs ᴡᴏʀᴅ ᴅᴏɴ'ᴛ ᴅᴏ ɴᴇxᴛ ᴛɪᴍᴇ ᴏᴋʏ! ɪғ ʏᴏᴜ ᴅᴏ ᴀɢᴀɪɴ ᴀᴅᴍɪɴs ɢɪᴠᴇs ʏᴏᴜ ʙᴀɴ.")
+    
+    except Exception as e:
+        logging.error(f"An error occurred: {e}")
 
 @app.on_edited_message(filters.group & ~filters.me)
 async def delete_edited_messages(client, edited_message):
