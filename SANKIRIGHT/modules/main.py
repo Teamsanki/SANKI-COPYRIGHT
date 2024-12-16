@@ -107,8 +107,8 @@ async def activevc(_, message: Message):
 FORBIDDEN_KEYWORDS = [
     "porn", "xxx", "sex", "NCERT", "XII", "page", "Ans", "meiotic", 
     "divisions", "System.in", "Scanner", "void", "nextInt", 
-    "madhrchod", "randi", "lund", "land", "lawda", "betichod", 
-    "chutiya", "gand", "lula"
+    "madhrchod", "randi", "lund", "land", "lawda", "betichod", "BETICHOD", "LWDA", "LAWDA",
+    "chutiya", "gand", "gaand", "lula", "Porn", "Sex", "PORN", "XXX", "RANDI", "RANDWI", "CHUTIYA", "GAAND", "LULA"
 ]
 
 @app.on_message()
