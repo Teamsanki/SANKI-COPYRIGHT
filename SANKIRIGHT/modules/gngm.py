@@ -17,10 +17,6 @@ groups_collection = db['groups']
 photos_collection = db['photos']
 captions_collection = db['captions']
 
-# Initialize the bot
-updater = Updater(BOT_TOKEN, use_context=True)
-scheduler = BackgroundScheduler()
-
 # Function to send random message and photo
 def send_random_message_and_photo(context: CallbackContext):
     group_ids = [group['chat_id'] for group in groups_collection.find()]
