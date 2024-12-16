@@ -1,6 +1,4 @@
 from SANKIRIGHT import SANKIRIGHT as app
-from telegram import Update, InputFile
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 import random
 import pymongo
 import os
@@ -85,8 +83,3 @@ def add_group(update: Update, context: CallbackContext):
 # Start the scheduler
 scheduler.add_job(send_random_message_and_photo, 'cron', hour='7,22')  # 7 AM and 10 PM
 scheduler.start()
-
-# Handlers
-updater.dispatcher.add_handler(CommandHandler('addpic', add_photo))
-updater.dispatcher.add_handler(CommandHandler('addcptn', add_caption))
-updater.dispatcher.add_handler(CommandHandler('addgroup', add_group))
