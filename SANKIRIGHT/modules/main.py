@@ -41,7 +41,7 @@ async def start(_, msg):
     reply_markup = InlineKeyboardMarkup(buttons)
     
     await msg.reply_photo(
-        photo="https://telegra.ph/file/24fe8f95d58605b582636.jpg",
+        photo="https://graph.org/file/72f0c77e4987f9caa46de-4fd6305ce614367c45.jpg",
         caption=start_txt,
         reply_markup=reply_markup
     )
@@ -50,7 +50,7 @@ async def start(_, msg):
 gd_buttons = [              
         [
             InlineKeyboardButton("ᴏᴡɴᴇʀ", user_id=OWNER_ID),
-            InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/sankibotkiduniya"),    
+            InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/Teamsankinetworkk"),    
         ]
         ]
 
