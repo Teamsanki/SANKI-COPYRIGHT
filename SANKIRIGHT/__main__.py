@@ -8,7 +8,7 @@ LOGGER_ID = -1002100433415
 
 loop = asyncio.get_event_loop()
 
-async def daxxpapa_boot():
+async def sanki_boot():
     for all_module in ALL_MODULES:
         importlib.import_module("SANKIRIGHT.modules." + all_module)
     print("𝖻𝗈𝗍 𝗌𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅 𝗌𝗍𝖺𝗋𝗍")
@@ -17,5 +17,5 @@ async def daxxpapa_boot():
     await SANKIRIGHT.send_message(LOGGER_ID, "**𝖨 𝖺𝗆 𝖺𝗅𝗂𝗏𝖾 𝖡𝖺𝖻𝗒 𝖸𝗈𝗎𝗋 𝖡𝗈𝗍 𝖲𝗎𝖼𝖼𝖾𝗌𝗌𝖿𝗎𝗅 𝖣𝖾𝗉𝗅𝗈𝗒 \n Mʏ Dᴇᴠᴇʟᴏᴘᴇʀ  [ ⌯ 𝐒 𝐀 𝐍 𝐊 𝐈 🜲 💸 𝐱𝗗 ](https://t.me/TSGCOFER)**")
 
 if __name__ == "__main__":
-    loop.run_until_complete(daxxpapa_boot())
+    loop.run_until_complete(sanki_boot())
     
