@@ -8,7 +8,7 @@ API_ID = int(os.environ.get("API_ID", "24740695"))
 # ------------------------------------------------
 API_HASH = os.environ.get("API_HASH", "a95990848f2b93b8131a4a7491d97092")
 # ----------------D--------------------------------
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "7718687925:AAHaKS11Trfc7nQztuM_uEmWWgzSBopZgBU")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "7944635704:AAHIc1M9LYdb2C-QGuTAHplw3sljD9rrJdI")
 # -----------------A-------------------------------
 BOT_USERNAME = os.environ.get("BOT_USERNAME", "SANKI_AI_COPYRIGHT_BOT")
 # ------------------X------------------------------
