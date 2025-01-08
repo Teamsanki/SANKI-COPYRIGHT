@@ -12,10 +12,10 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", "7944635704:AAHIc1M9LYdb2C-QGuTAHplw3slj
 # -----------------A-------------------------------
 BOT_USERNAME = os.environ.get("BOT_USERNAME", "SANKI_AI_COPYRIGHT_BOT")
 # ------------------X------------------------------
-OWNER_ID = int(os.environ.get("OWNER_ID", "7877197608"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "7548678061"))
 # ------------------X------------------------------
 # ------------------------------------------------
-LOGGER_ID = int(os.environ.get("LOGGER_ID", "-1002100433415"))
+LOGGER_ID = int(os.environ.get("LOGGER_ID", "-1002148651992"))
 # ------------------------------------------------
 MONGO_URL = os.environ.get("MONGO_URL", "mongodb+srv://Teamsanki:Teamsanki@cluster0.jxme6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 # ------------------------------------------------
